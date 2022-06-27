@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.Map;
 
 public class HomePageSteps  extends BasePageSetup {
@@ -25,9 +26,11 @@ public class HomePageSteps  extends BasePageSetup {
 
     @And("I Click on {string} Link in NAV Tabs on Main Page")
     public void iClickOnSpecificNavLinks(String navLink) throws Exception {
-          new WebDriverWait(webdriver, 40).until(ExpectedConditions.visibilityOf(homePage.getmainTabWebElement(webdriver, navLink)));
+
+        new WebDriverWait(webdriver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(homePage.homeButton));
+        homePage.homeButton.click();
+        new WebDriverWait(webdriver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(homePage.getmainTabWebElement(webdriver, navLink)));
         homePage.getmainTabWebElement(webdriver, navLink).click();
-        Thread.sleep(3000);
 
         }
 
@@ -36,7 +39,7 @@ public class HomePageSteps  extends BasePageSetup {
     public void iClickOnIconUnderMyClientGroup(String navLink) throws Exception {
         new WebDriverWait(webdriver, 40).until(ExpectedConditions.visibilityOf(homePage.getmainTabWebElement(webdriver, navLink)));
         homePage.getmainTabWebElement(webdriver, navLink).click();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
 
     }
 

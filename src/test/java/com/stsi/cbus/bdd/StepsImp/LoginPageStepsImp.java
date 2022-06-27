@@ -10,8 +10,8 @@ public class LoginPageStepsImp extends BasePageSetup {
 
     public void loginIntoOracleHCM(){
         loginPage =  new LoginPage();
-        loginPage.userNamefld.sendKeys("CURTIS.FEITTY");
-        loginPage.passwordField.sendKeys("tDA7U%3?");
+        loginPage.userNamefld.sendKeys("ALBERT.HARRIS");
+        loginPage.passwordField.sendKeys("uPN3g#8*");
         loginPage.signInButton.click();
     }
 

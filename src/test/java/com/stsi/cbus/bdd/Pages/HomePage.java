@@ -23,9 +23,14 @@ public class HomePage  extends BasePageSetup {
 
 
 
+    /********** Home Button *********/
+    @FindBy(xpath = "//a[@title='Home']")
+    public WebElement homeButton;
+
+
+
     public WebElement getmainTabWebElement(WebDriver driver, String str){
 
-        System.out.println(String.format(links,str));
         return webdriver.findElement(By.xpath(String.format(links,str)));
 
     }
