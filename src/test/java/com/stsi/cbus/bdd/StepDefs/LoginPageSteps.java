@@ -30,7 +30,7 @@ public class LoginPageSteps extends BasePageSetup {
 
     @Given("I Navigate to Oracel HCM Login Page")
     public void I_Navigate_to_Oracel_HCM_Login_Page() throws Exception {
-        webdriver.get("https://fa-esev-saasfademo1.ds-fa.oraclepdemos.com/");
+        webdriver.get("https://fa-eudu-saasfademo1.ds-fa.oraclepdemos.com/");
 
     }
 

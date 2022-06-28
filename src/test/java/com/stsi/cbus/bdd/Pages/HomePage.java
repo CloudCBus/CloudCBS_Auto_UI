@@ -18,7 +18,7 @@ public class HomePage  extends BasePageSetup {
 
     }
 
-    private static String links = "//a[text()='%s']";
+    public static String links = "//a[text()='%s']";
 
 
 

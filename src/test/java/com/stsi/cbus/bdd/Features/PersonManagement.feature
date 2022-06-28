@@ -16,9 +16,24 @@ Feature: PersonManagement Feature
     When  I Enter Termination Date and Review the Termination Process and Submit the Request
     Then  I Validate the Employee should not appear in the System anymore upon Employee Search
 
+  @RehireanEmployee
+  Scenario: Terminate an Employee and Validate the Employee Should not be visible in the System after Termination.
+    Given I Navigate to Oracel HCM Login Page
+    Then  I Login into the Application with Valid Credentials
+    And   I Click on "My Client Groups" Link in NAV Tabs on Main Page
+    And   I Click on "Person Management" Link Under My Clients Group
+    Then  I Verify Person Management Search Page is Displayed
+    When  I Search Employee by Person Number Including terminated work Relationships
+    Then  I Validate the Employee with Person Number is Displayed in the Search Results
+    When  I Click on the Actions Icon and Select "Work Relationship" Action under "Personal and Employment" Section
+    Then  I Validate Work Relationship page is displayed
+   #Remaining Steps Pending For this Scenario
+
+
+
 
   @AddSecassignment
-  Scenario: Terminate an Employee and Validate the Employee Should not be visible in the System after Termination.
+  Scenario: Add Secendory Assignment
     Given I Navigate to Oracel HCM Login Page
     Then  I Login into the Application with Valid Credentials
     And   I Click on "My Client Groups" Link in NAV Tabs on Main Page
@@ -38,6 +53,25 @@ Feature: PersonManagement Feature
     When  I Enter all Mandatory Details in the Roles Section and Click on Next
     Then  I Validate the Page with "Add Assignment: Review" header is Displayed
     Then  I Click On Submit Button to Sumbit the Secendory Assignment
+
+
+  @ExtendanAssignment
+  Scenario: Extend an Assignment
+    Given I Navigate to Oracel HCM Login Page
+    Then  I Login into the Application with Valid Credentials
+    And   I Click on "My Client Groups" Link in NAV Tabs on Main Page
+    And   I Click on "Person Management" Link Under My Clients Group
+    Then  I Verify Person Management Search Page is Displayed
+    When  I Search Employee by Person Number and Click on Search Button
+    Then  I Validate the Employee with Person Number is Displayed in the Search Results
+    When  I Click on the Actions Icon and Select "Employment" Action under "Personal and Employment" Section
+    Then  I Validate the Page with "Employment" header is Displayed
+    Then  I Click Edit button and Select "Update" Employement option from the dropdown
+    When  I Select Action as "Extend Temporary Assignment" and Action Reason as "Reorganization" and Click on OK Button
+    Then  I Validate the Page with "Edit Employment: Extend Temporary Assignment" header is Displayed
+    When  I Enter all Mandatory Details in the Roles Section and Click on Next
+    Then  I Validate the Page with "Edit Employment: Review" header is Displayed
+    Then  I Review the Change Details and Click on Submit Button
 
 
 
@@ -102,7 +136,7 @@ Feature: PersonManagement Feature
 
 
   @PramoteAnEmployee
-  Scenario: Demote an Employee
+  Scenario: Pramote An Employee
     Given I Navigate to Oracel HCM Login Page
     Then  I Login into the Application with Valid Credentials
     And   I Click on "My Client Groups" Link in NAV Tabs on Main Page
@@ -257,3 +291,46 @@ Feature: PersonManagement Feature
     Then  I change the Employee Working Hours and Click on Review Button
     Then  I Validate the Page with "Edit Employment: Review" header is Displayed
     Then  I Review the Change Details and Click on Submit Button
+
+
+  @ViewanEmployeeRecord
+  Scenario: View an Employee Record
+    Given I Navigate to Oracel HCM Login Page
+    Then  I Login into the Application with Valid Credentials
+    And   I Click on "My Client Groups" Link in NAV Tabs on Main Page
+    And   I Click on "Person Management" Link Under My Clients Group
+    Then  I Verify Person Management Search Page is Displayed
+    When  I Search Employee by Person Number and Click on Search Button
+    Then  I Validate the Employee with Person Number is Displayed in the Search Results
+    When  I Click on the Actions Icon and Select "Employment" Action under "Personal and Employment" Section
+    Then  I Validate the Page with "Employment" header is Displayed
+    Then  I Click On Task Icon on Right hand Side of the Page and Select "Change Salary" Task
+    #Include Above Step once Access issue is Resolved
+
+
+  @UpdateSalaryofanEmployee
+  Scenario: Update Salary of an Employee
+    Given I Navigate to Oracel HCM Login Page
+    Then  I Login into the Application with Valid Credentials
+    And   I Click on "My Client Groups" Link in NAV Tabs on Main Page
+    And   I Click on "Person Management" Link Under My Clients Group
+    Then  I Verify Person Management Search Page is Displayed
+    When  I Search Employee by Person Number and Click on Search Button
+    Then  I Validate the Employee with Person Number is Displayed in the Search Results
+    When  I Click on the Actions Icon and Select "Employment" Action under "Personal and Employment" Section
+    Then  I Validate the Page with "Employment" header is Displayed
+    Then  I Click On Task Icon on Right hand Side of the Page and Select "Change Salary" Task
+    # Include Salary Steps once the Access issue is Resolved
+
+
+  @RehireanEmployee
+  Scenario: Rehire an Employee
+    Given I Navigate to Oracel HCM Login Page
+    Then  I Login into the Application with Valid Credentials
+    And   I Click on "My Client Groups" Link in NAV Tabs on Main Page
+    And   I Click on "Person Management" Link Under My Clients Group
+    Then  I Verify Person Management Search Page is Displayed
+    When  I Search Employee by Person Number and Click on Search Button
+    Then  I Validate the Employee with Person Number is Displayed in the Search Results
+    When  I Click on the Actions Icon and Select "Employment" Action under "Personal and Employment" Section
+    Then  I Validate the Page with "Employment" header is Displayed

@@ -37,7 +37,7 @@ public class BasePageSetup extends PageInitializer {
 
         }else if(browser.equalsIgnoreCase("Firefox")){
 
-            System.setProperty("webdriver.gecko.driver", (System.getProperty("user.dir") + File.separator +"src/test/resources/Drivers/Firefox/geckodriver"));
+            System.setProperty("webdriver.gecko.driver", (System.getProperty("user.dir") + File.separator +"src/test/resources/Drivers/Firefox/Windows/geckodriver.exe"));
             webdriver = new FirefoxDriver();
             webdriver.manage().window().maximize();
             webdriver.manage().deleteAllCookies();

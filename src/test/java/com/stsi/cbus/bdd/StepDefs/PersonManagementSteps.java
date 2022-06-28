@@ -35,11 +35,16 @@ public class PersonManagementSteps extends BasePageSetup {
 
     @And("I Search Employee by Person Number and Click on Search Button")
     public void searchEmployeeByPersonNumberandClickOnSearchButton() throws Exception {
-        new WebDriverWait(webdriver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(personManagementPage.personManagementSearchHeadder));
-        personManagementPage.personNumberSearchField.clear();
-        personManagementPage.personNumberSearchField.sendKeys("512");
-        Thread.sleep(2000);
-        personManagementPage.searchButton.click();
+
+        personManagementStepsImp.searchEmployeeByPersonNumber();
+
+    }
+
+    @And("I Search Employee by Person Number Including terminated work Relationships")
+    public void I_Search_Employee_by_Person_Number_Including_terminated_work_Relationships() throws Exception {
+
+        personManagementStepsImp.searchEmployeeByPersonNumberIncludingTerminatedEmployees();
+
     }
 
     @Then("I Validate the Employee with Person Number is Displayed in the Search Results")
@@ -53,7 +58,6 @@ public class PersonManagementSteps extends BasePageSetup {
     public void I_Click_on_the_Actions_Icon_and_SelectWork_Relationship_Action_under_Personal_and_Employment(String action, String item) throws Exception {
 
         personManagementStepsImp.clickonActionsIconandSelectWorkRelationship(action, item);
-
 
     }
 
@@ -178,6 +182,9 @@ public class PersonManagementSteps extends BasePageSetup {
         personManagementStepsImp.enterWorkingHoursAndClickOnReviewButton();
     }
 
-
+    @Then("I Click On Task Icon on Right hand Side of the Page and Select {string} Task")
+    public void I_Click_On_Task_Icon_on_Right_hand_Side_of_the_Page_and_Select_Task(String task) throws Exception {
+        personManagementStepsImp.ClcikOnTaskIconAndSelectREspectiveTask(task);
+    }
 }
 

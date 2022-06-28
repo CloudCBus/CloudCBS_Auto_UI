@@ -4,6 +4,7 @@ import com.stsi.cbus.bdd.BrowerControls.BasePageSetup;
 import com.stsi.cbus.bdd.Pages.HomePage;
 import com.stsi.cbus.bdd.StepsImp.HomePageStepsImp;
 import com.stsi.cbus.bdd.StepsImp.LoginPageStepsImp;
+import com.stsi.cbus.bdd.Utils.WebDriverUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -29,8 +30,7 @@ public class HomePageSteps  extends BasePageSetup {
 
         new WebDriverWait(webdriver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(homePage.homeButton));
         homePage.homeButton.click();
-        new WebDriverWait(webdriver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(homePage.getmainTabWebElement(webdriver, navLink)));
-        homePage.getmainTabWebElement(webdriver, navLink).click();
+        WebDriverUtils.returnWebElement(homePage.links,navLink).click();
 
         }
 

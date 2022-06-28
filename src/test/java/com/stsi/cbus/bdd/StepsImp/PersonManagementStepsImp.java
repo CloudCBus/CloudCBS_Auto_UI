@@ -407,5 +407,52 @@ public class PersonManagementStepsImp extends BasePageSetup {
         }
     }
 
+    public void ClcikOnTaskIconAndSelectREspectiveTask(String task) throws Exception {
+
+        try {
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new Exception("Failed to click on Task Icon" + "\t" + e.getMessage());
+        }
+    }
+
+    public void searchEmployeeByPersonNumber() throws Exception {
+
+        try {
+
+            new WebDriverWait(webdriver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(personManagementPage.personManagementSearchHeadder));
+            personManagementPage.personNumberSearchField.clear();
+            personManagementPage.personNumberSearchField.sendKeys("512");
+            Thread.sleep(2000);
+            personManagementPage.searchButton.click();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new Exception("Failed To Search Person NUmber" + "\t" + e.getMessage());
+        }
+    }
+
+    public void searchEmployeeByPersonNumberIncludingTerminatedEmployees() throws Exception {
+
+        try {
+
+            new WebDriverWait(webdriver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(personManagementPage.personManagementSearchHeadder));
+            personManagementPage.personNumberSearchField.clear();
+            personManagementPage.personNumberSearchField.sendKeys("512");
+            Thread.sleep(2000);
+            if(!personManagementPage.terminatedworkrelationshipsCheckBox.isSelected()){
+                personManagementPage.terminatedworkrelationshipsCheckBox.click();
+            }
+            personManagementPage.searchButton.click();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new Exception("Failed To Search Person NUmber Including Terminated Employees" + "\t" + e.getMessage());
+        }
+    }
+
+
 }
 

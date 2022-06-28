@@ -290,7 +290,7 @@ public class PersonManagementPage extends BasePageSetup {
     @FindBy(xpath = "//input[@aria-label='End Time']/ancestor::td[1]/following-sibling::td/descendant::input[1]")
     public WebElement endTimeAMPMdropdown;
 
-    /********** End Time AM PM Dropdown*********/
+    /********** End Time AM PM Dropdown *********/
     @FindBy(xpath = "//input[@aria-label='Start Time']/ancestor::td[1]/following-sibling::td/descendant::input[1]")
     public WebElement startTimeAMPMdropdown;
 
@@ -306,7 +306,6 @@ public class PersonManagementPage extends BasePageSetup {
     @FindBy(xpath = "//a[@title='Edit']")
     public WebElement personExtraInformationEditDropdown;
 
-
     /********** person Extra Information Edit Dropdown *********/
     @FindBy(xpath = "//td[text()='Update']")
     public WebElement personExtraInformationEditDropdownUpdateItem;
@@ -317,6 +316,18 @@ public class PersonManagementPage extends BasePageSetup {
 
    // confirmationOkButton
 
+
+    /**********  Tasks Icon *********/
+    @FindBy(xpath = "//div[@title='Tasks']")
+    public WebElement tasksIcon;
+
+
+    //a[text()='Areas of Responsibility']
+
+
+    /**********  Include terminated work relationships Check Box *********/
+    @FindBy(xpath = "//label[text()='Include terminated work relationships']/preceding-sibling::input")
+    public WebElement terminatedworkrelationshipsCheckBox;
 
 }
 
